@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>angular front end</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/Controller.js"></script>
+	<script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+</head>
+<body ng-app="app" ng-controller="Ctrl" class="container">
+	<h2>THE USERS</h2>
+	<hr>
+	<table class="table">
+		<tr>
+			<th>name</th>
+			<th>lasname</th>
+			<th>age</th>
+		</tr>
+		<tr ng-repeat="p in persones">
+			<td>{{p.name}}</td>
+			<td>{{p.lastname}}</td>
+			<td>{{p.age}}</td>
+			<td><button class="btn btn-success" ng-click="deleteperson(p.id)">delete</button></td>
+		</tr>
+	</table>
+	<div class="row">
+		<input type="text" class="form-control" ng-model="person.name">
+		<input type="text" class="form-control" ng-model="person.lastname">
+		<input type="number" class="form-control" ng-model="person.age">
+		<button class="btn btn-default" ng-click="addperson()">add Person</button>
+	</div>
+</body>
+</html>
